@@ -26,6 +26,8 @@ class PeopleCounter(object):
 		## not using difference, missing temporal infomation from video
         kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(3,3)) # mophorlogy
         fgbg = cv2.createBackgroundSubtractorMOG2() # MOG background substraction
+		## add intermediate results here using cv.imshow to validate results from background substraction
+		## cv.imshow
         fourcc = cv2.VideoWriter_fourcc(*'XVID') # encoding
         frame1 = np.zeros((640,480))
         self.out = cv2.VideoWriter(datetime.datetime.now().strftime("%A_%d_%B_%Y_%I_%M_%S%p")+'.avi',fourcc, 5.0, np.shape(frame1))
